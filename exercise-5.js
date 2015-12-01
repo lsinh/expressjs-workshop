@@ -21,7 +21,7 @@
 
 var express = require('express');
 var app = express();
-var results = [];
+
 
 var entries = {
 
@@ -70,6 +70,7 @@ function emailComp(queryEmail, userEmail) {
 
 
 app.get('/entry/search', function (req, res) {
+  var results = [];
 
  
   for (var idKey in entries) {
