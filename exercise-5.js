@@ -73,7 +73,7 @@ function emailComp(queryEmail, userEmail) {
 
 
 app.get('/entry/search', function (req, res) {
-  //the results empty arrray has to stay within the app.get function to avoid creating a state in which results are stored in the empty array
+  //the results empty arrray has to stay within the app.get function to avoid creating a state in which results are stored and new result are pushed at the end of the array
   //i.e. if it was outside the function it would just keep adding more matches to the page
   
   var results = [];
