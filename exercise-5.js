@@ -23,6 +23,7 @@ var express = require('express');
 var app = express();
 
 
+//These are a bag of objects with id key numbers
 var entries = {
 
   1: {
@@ -58,8 +59,10 @@ var entries = {
   
 };
 
-//This function allows us to loop through the emails to compare whether they exist or not
+//This function allows us to loop through the emails property to compare whether they exist or not
 function emailComp(queryEmail, userEmail) {
+  
+  //the userEmail in this case is simply the user's input, but the if statement searches for the speficid address at the specific index
   for (var i = 0; i < userEmail.length; i++) {
     if (userEmail[i].address === queryEmail) {
       return true;
@@ -70,6 +73,9 @@ function emailComp(queryEmail, userEmail) {
 
 
 app.get('/entry/search', function (req, res) {
+  //the results empty arrray has to stay within the app.get function to avoid creating a state in which results are stored in the empty array
+  //i.e. if it was outside the function it would just keep adding more matches to the page
+  
   var results = [];
 
  
